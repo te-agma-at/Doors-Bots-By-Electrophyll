@@ -55,6 +55,9 @@ while true do
     end
 
     entity.Debug.OnEntityDespawned = function(entityModel)
+        if math.random(1,500) == 500 then -- 1/500 chance
+            doSpawn() -- spawn it again
+        end
     end
 
     entity.Debug.OnEntityStartMoving = function(entityModel)
