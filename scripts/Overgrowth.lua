@@ -45,11 +45,7 @@ function doSpawn()
                         "And the lights flicker for 2 seconds before it arrives instead of 1 second.",
                         "It spawns every 90-95 seconds, too.", "So use what you have learned from Rush!"}
     })
-end
-
-while true do
-    wait(math.random(90, 95))
-    doSpawn()
+    
     -----[[ Advanced ]]-----
     entity.Debug.OnEntitySpawned = function(entityModel)
     end
@@ -69,7 +65,11 @@ while true do
     entity.Debug.OnDeath = function()
     end
     ---------------------------
-
     -- Run the created entity
     Creator.runEntity(entity)
+end
+
+while true do
+    wait(math.random(90, 95))
+    doSpawn()
 end
